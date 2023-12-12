@@ -1,0 +1,40 @@
+header{
+    background-color: var(--myColorVar);
+    color: var(--myColorVar2);
+    height: 9vh;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Onest', sans-serif;
+    font-weight: bold;
+    font-size: larger;
+}
+
+header aside{
+    width: 600px;
+}
+
+header section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    width: 400px;
+}
+ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+    font-weight: lighter;
+} 
+
+a{
+    text-decoration: none;
+    color: var(--myColorVar2);
+}
+ul a:visited {
+    text-decoration: none;
+    color: var(--myColorVar2);
+}
+

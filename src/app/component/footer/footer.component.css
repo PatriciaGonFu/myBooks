@@ -1,0 +1,23 @@
+footer{
+    background-color: var(--myColorVar);
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: center;
+}
+
+.logo-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex;
+    align-content: center;
+    height: 98%;
+    display: flex;
+    gap:12px;
+}
+
+img{
+    height: 100%;
+    width: 32px;
+}

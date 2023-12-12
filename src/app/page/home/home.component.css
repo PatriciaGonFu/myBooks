@@ -1,0 +1,23 @@
+main{
+    height: 86vh;
+    background-image: url('/assets/img/biblioteca home.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+div{
+    height: 15%;
+    width: 75%;
+    background-color: var(--myColorVar3);
+    border-radius: 10px;
+    color: var(--myColorVar);
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    opacity: .8;
+}
