@@ -13,7 +13,6 @@ footer{
     align-items: flex;
     align-content: center;
     height: 98%;
-    display: flex;
     gap:12px;
 }
 
