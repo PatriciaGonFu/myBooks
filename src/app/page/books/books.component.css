@@ -1,0 +1,182 @@
+main{
+    background-color: #f1eadc;
+}
+
+.card-container{
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 86vh;
+}
+
+.icon-container{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.icon-container img{
+    width: 100%;
+    height: 100%;
+}
+
+
+h1{
+    font-size: 32px;
+    color: rgb(205, 44, 44);
+    align-self: center;
+    margin-top: 20px;
+}
+
+.card{
+    height: 365px;
+    width: 290px;
+    margin: 20px;
+    padding: 15px;
+    background: var(--myColorVar3);
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: smaller;
+}
+
+h2{
+    margin-top: 12px;
+    color: var(--myColorVar);
+}
+
+h4{
+    color: grey;
+}
+
+.url-container{
+height: 40%;
+width: 45%;
+}
+
+.url-container img{
+    height: 100%;
+    width: 100%;
+}
+
+.compra {
+    border: none;
+    outline: none;
+    background-color: var(--myColorVar);
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    align-content: center;
+    margin-top: 16px;
+}
+
+
+  .compra:hover {
+    background-color: var(--myColorVar);
+  }
+  
+  .cargarLibros{
+    height: 80%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    background-color: var(--myColorVar3);
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .title {
+    font-size: 28px;
+    color: var(--myColorVar);
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+
+  
+  .form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .form label .input:valid + span {
+    color: var(--myColorVar2);
+  }
+  
+  button {
+    border: none;
+    outline: none;
+    background-color: var(--myColorVar);
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+  }
+
+  .even-button{
+    background-color: var(--myColorVar2);
+  }
+  
+  .submit:hover {
+    background-color: var(--myColorVar);
+  }

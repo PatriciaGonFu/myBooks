@@ -24,7 +24,6 @@ export class ProfileComponent  {
     this.myUser.last_name = nuevoApellido;
     this.myUser.email = nuevoEmail;
     this.myUser.photo = nuevaFoto;
-console.log(this.myUser.photo)
 }
 ngOnInit(): void {  
 }
