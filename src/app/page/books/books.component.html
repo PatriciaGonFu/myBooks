@@ -1,4 +1,4 @@
-<main>
+
     <div class="card-container">
         <div *ngIf= "myBooks.length ===0">
             <div class="icon-container">
@@ -7,18 +7,9 @@
             <h1>No hay libros disponibles!</h1><br>
             <h1>Vuelva mañana</h1>
         </div>
-        <div *ngFor="let book of myBooks; let even = even" class="card" [ngClass]="{'even-card': even, 'odd-card': !even}">            <div class="url-container">
-                <img src="{{book.photo}}" alt=""/>
-            </div>
-            <div class="datos" >
-                <h2>{{book.title}}</h2><br>
-                {{book.author}}<br>
-                 <h4>{{book.type}}</h4><br>
-                {{book.id_book | pitufar}} <br>
-                 <b>{{book.price}} € <br></b>
-                 <button class="compra" [ngClass]="{'even-button': even, 'odd-button': !even}">Comprar</button>
-            </div>
-        </div>
+        <div *ngFor="let book of myBooks; let even = even">    
+        <app-card [bookPadre]="book" [evenPadre]="even" [libro]="book"
+        (eliminarLibroEvent)="eliminarLibro($event)"></app-card>  
     </div>
 
     <div class="cargarLibros">
@@ -60,4 +51,3 @@
     
     </div>
 
-</main>

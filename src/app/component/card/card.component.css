@@ -1,0 +1,79 @@
+.card{
+    height: 365px;
+    width: 290px;
+    margin: 20px;
+    padding: 15px;
+    background: var(--myColorVar3);
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: smaller;
+}
+
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 10px;
+
+
+}
+
+.eliminar{
+    border: none;
+    outline: none;
+    background-color: var(--myColorVar);
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--myColorVar3);
+    font-size: 14px;
+    transform: .3s ease;
+    align-content: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eliminar:hover {
+    background-color: var(--myColorVar);
+  }
+
+h2{
+    margin-top: 12px;
+    color: var(--myColorVar);
+}
+
+h4{
+    color: grey;
+}
+
+.url-container{
+height: 40%;
+width: 45%;
+}
+
+.url-container img{
+    height: 100%;
+    width: 100%;
+}
+
+.compra {
+    border: none;
+    outline: none;
+    background-color: var(--myColorVar);
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    align-content: center;
+    margin-top: 11px;
+}
+
+
+  .compra:hover {
+    background-color: var(--myColorVar);
+  }
