@@ -24,15 +24,11 @@ export class BooksComponent {
         ]
   }
   
-  cargarLibros(title: string, type: string, author: string, price: number, photo: string, id_book: number) {
+cargarLibros(title: string, type: string, author: string, price: number, photo: string, id_book: number) {
     const newBook = new Book(title, type, author, price, photo, id_book);
     this.myBooks.push(newBook);
     
   }
 
-  eliminarLibro(libro: Book){
-   const index = this.myBooks.indexOf(libro);
-   this.myBooks.splice(index,1);
-  }
   ngOnInit():void{}
 }

@@ -13,7 +13,6 @@ import { BooksComponent } from './page/books/books.component';
 import { PitufarPipe } from './pipes/pitufar.pipe';
 import { CardComponent } from './component/card/card.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +24,7 @@ import { CardComponent } from './component/card/card.component';
     ProfileComponent,
     BooksComponent,
     PitufarPipe,
-    CardComponent
+    CardComponent,
   ],
   imports: [
     BrowserModule,
