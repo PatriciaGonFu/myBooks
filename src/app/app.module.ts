@@ -12,6 +12,8 @@ import { ProfileComponent } from './page/profile/profile.component';
 import { BooksComponent } from './page/books/books.component';
 import { PitufarPipe } from './pipes/pitufar.pipe';
 import { CardComponent } from './component/card/card.component';
+import { UpdateBookComponent } from './page/update-book/update-book.component';
+import { AddBookComponent } from './page/add-book/add-book.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { CardComponent } from './component/card/card.component';
     ProfileComponent,
     BooksComponent,
     PitufarPipe,
-    CardComponent
+    CardComponent,
+    UpdateBookComponent,
+    AddBookComponent
   ],
   imports: [
     BrowserModule,

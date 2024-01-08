@@ -9,10 +9,10 @@ import { Book } from 'src/app/models/book';
 export class CardComponent {
 @Input() bookPadre: Book;
 @Input() evenPadre: boolean;
-@Output() eliminarLibroEvent = new EventEmitter<Book>();
+@Output() eliminarLibroEvent = new EventEmitter<number>();
 
 eliminarLibro(){
-  this.eliminarLibroEvent.emit(this.bookPadre);
+  this.eliminarLibroEvent.emit(this.bookPadre.id_book);
 }
 
 constructor (){
