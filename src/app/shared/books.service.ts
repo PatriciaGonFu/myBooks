@@ -36,7 +36,7 @@ export class BooksService {
 
   edit(book:Book):boolean{
     for(let i=0; i<this.books.length; i++){
-      if(this.books[i].title === book.title){
+      if(this.books[i].id_book == book.id_book){
         this.books[i] = {...this.books[i], ...book};
         return true;
       }
