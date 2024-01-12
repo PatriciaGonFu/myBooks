@@ -10,7 +10,7 @@ main{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    min-height: 86vh;
+    min-height: 150vh;
 }
 
 .icon-container{
@@ -36,8 +36,8 @@ h1{
 }
 
 .card{
-    height: 365px;
-    width: 290px;
+  height: 480px;
+  width: 310px;
     margin: 20px;
     padding: 15px;
     background: var(--myColorVar3);
@@ -129,5 +129,55 @@ button:active {
   color: var(--myColorVar3);
   font-size: 15px;
   padding: 24px 46px 24px 26px;
-}
+}  
+  .form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .form label .input:valid + span {
+    color: var(--myColorVar2);
+  }
+  
+  button {
+    border: none;
+    outline: none;
+    background-color: var(--myColorVar);
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+  }
 
+  .even-button{
+    background-color: var(--myColorVar2);
+  }
+  
+  .submit:hover {
+    background-color: var(--myColorVar);
+  }

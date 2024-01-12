@@ -1,8 +1,11 @@
 main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 86vh;
+  height: 86vh;
+  background-image: url('/assets/img/biblioteca home.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .form {
     display: flex;
