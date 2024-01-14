@@ -1,6 +1,6 @@
 .card{
     height: 510px;
-    width: 320px;
+    width: 360px;
     margin: 20px;
     padding: 15px;
     background: var(--myColorVar3);
@@ -42,7 +42,7 @@
   }
 
 h2{
-    margin-top: 12px;
+    margin-top: 10px;
     color: var(--myColorVar);
 }
 

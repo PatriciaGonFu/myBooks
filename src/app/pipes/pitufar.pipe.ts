@@ -8,7 +8,7 @@ export class PitufarPipe implements PipeTransform {
   transform(value: number): string 
   {
     let result: string;
-    result = 'Ref:'+ value;
+    result = 'Ref: '+ value;
 
     return result;
   }

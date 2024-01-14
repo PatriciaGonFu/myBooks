@@ -1,5 +1,10 @@
 main{
     background-color: #f1eadc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .card-container{
@@ -36,8 +41,8 @@ h1{
 }
 
 .card{
-  height: 480px;
-  width: 310px;
+  height: 510px;
+  width: 360px;
     margin: 20px;
     padding: 15px;
     background: var(--myColorVar3);
@@ -50,7 +55,8 @@ h1{
 }
 
 h2{
-    margin-top: 12px;
+    margin-top: 10px;
+    width: 350px ;
     color: var(--myColorVar);
 }
 
@@ -95,6 +101,7 @@ width: 45%;
   background-color: var(--myColorVar);
   border-radius: 50px;
   position: relative;
+  margin-bottom: 10px;
 }
 
 .searchButton {

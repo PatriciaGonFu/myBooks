@@ -3,7 +3,7 @@
 
     <form #loginForm class="form" (ngSubmit)="onSubmit(loginForm)">
         <p class="title">Conéctate</p>
-        <p class="message">Conéctate para acceder a nuestra aplicación</p>
+        <p class="message">Inicia sesión para acceder a nuestra aplicación</p>
         <label>
             <input type="email" class="input" name="email" [(ngModel)]="user.email" #emailId="ngModel" 
             [ngClass]="{'is-invalid': (emailId.dirty || emailId.touched) && emailId.invalid}" email required>

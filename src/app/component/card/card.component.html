@@ -7,8 +7,8 @@
     </div>
     <div class="datos" >
         <h2>{{bookPadre.title}}</h2><br>
-        {{bookPadre.author}}<br>
-         <h4>{{bookPadre.type}}</h4><br>
+        <h4>{{bookPadre.author}}</h4><br>
+         <h5>{{bookPadre.type}}</h5><br>
         {{bookPadre.id_book | pitufar}} <br>
          <b>{{bookPadre.price}} € <br></b>
          <button class="compra" [ngClass]="{'even-button': evenPadre, 'odd-button': !evenPadre}">Comprar</button>
