@@ -123,7 +123,9 @@ main{
   }
   
   .submit:hover {
-    background-color: var(--myColorVar);
+    background-color: var(--myColorVar2);
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+    transform: translateY(-3px);
   }
 
   .error-message {

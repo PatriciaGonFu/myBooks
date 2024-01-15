@@ -38,3 +38,6 @@ ul a:visited {
     color: var(--myColorVar2);
 }
 
+ul a:hover{
+    border-bottom: 4px solid var(--myColorVar2);
+}
