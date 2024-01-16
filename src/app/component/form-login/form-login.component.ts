@@ -12,7 +12,7 @@ export class FormLoginComponent implements OnInit {
   public user: User
 
   constructor()
-  {this.user = new User('','','','','','')}
+  {this.user = new User('','','','','','','')}
 
   onSubmit(form:NgForm){
     console.log(form.value);

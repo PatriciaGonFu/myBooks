@@ -1,32 +1,55 @@
 
-<form class="form">
+<form #registerForm class="form" (ngSubmit)="onSubmit(registerForm)">
     <p class="title">Regístrate</p>
     <p class="message">Regístrate ahora y accede a nuestra aplicación</p>
         <div class="flex">
         <label>
-            <input required="" placeholder="" type="text" class="input">
+            <input type="text" class="input" name="nombre" [(ngModel)]="user.name" #nameID= "ngModel"
+            [ngClass]="{'is-invalid': (nameID.dirty || nameID.touched) && nameID.invalid}" nombre required>
             <span>Nombre</span>
+            <div *ngIf="nameID.invalid && (nameID.dirty || nameID.touched)" class="error.message">
+                <div *ngIf="nameID.errors?.required">Obligatorio indicar nombre</div>
+            </div>
         </label>
 
         <label>
-            <input required="" placeholder="" type="text" class="input">
+            <input type="text" class="input" name="apellidos" [(ngModel)]="user.last_name" #last_nameID= "ngModel"
+            [ngClass]="{'is-invalid': (last_nameID.dirty || last_nameID.touched) && last_nameID.invalid}" apellidos required>
             <span>Apellidos</span>
+            <div *ngIf="last_nameID.invalid && (last_nameID.dirty || last_nameID.touched)" class="error-message">
+                <div *ngIf="last_nameID.errors?.required">Obligatorio indicar apellido</div>
+            </div>
         </label>
     </div>  
             
     <label>
-        <input required="" placeholder="" type="email" class="input">
+        <input type="email" class="input" name="email" [(ngModel)]="user.email" #emailId="ngModel" 
+        [ngClass]="{'is-invalid': (emailId.dirty || emailId.touched) && emailId.invalid}" email required>
         <span>Email</span>
+        <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)" class="error-message">
+            <div *ngIf="emailId.errors?.required">Obligatorio indicar email</div>
+            <div *ngIf="emailId.errors?.email">Email incorrecto</div>
+        </div>
     </label> 
         
     <label>
-        <input required="" placeholder="" type="password" class="input">
-        <span>Contraseña</span>
+        <input type="password" class="input" name="password" [(ngModel)]="user.password" #passwordId="ngModel"
+            [ngClass]="{'is-invalid': (passwordId.dirty || passwordId.touched) && passwordId.invalid}" minlength="8" required>
+            <span>Contraseña</span>
+            <div *ngIf="passwordId.invalid && (passwordId.dirty || passwordId.touched)" class="error-message">
+                <div *ngIf="passwordId.errors?.required">Obligatorio password</div>
+                <div *ngIf="passwordId.errors?.minlength">Mínimo 8 caracteres</div>
+            </div>
     </label>
     <label>
-        <input required="" placeholder="" type="password" class="input">
-        <span>Confirma contraseña</span>
-    </label>
-    <button class="submit">Envía</button>
+        <input type="password" class="input" name="confirmPassword" [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel"
+            [ngClass]="{'is-invalid': (confirmPassword.dirty || confirmPassword.touched) && confirmPassword.invalid}" required>
+            <span>Confirma contraseña</span>
+        <span *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="error-message">
+            <div *ngIf="confirmPassword.errors?.required">Obligatorio confirmar contraseña</div>
+            <div *ngIf="user.password !== user.confirmPassword">Las contraseñas no coinciden</div>
+        </span>
+     </label>
+    <button class="submit" [disabled]="registerForm.invalid">Envía</button>
     <p class="signin">¿Ya tienes una cuenta?<a routerLink="login">Accede</a></p>
 </form>

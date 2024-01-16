@@ -11,7 +11,7 @@ export class ProfileComponent  {
 
   constructor()
   {
-    this.myUser = new User("FulMen","Fulanito","Mengano","fulanito.mengano@gmail.com","https://th.bing.com/th/id/OIG.XQbFRphxzHhe3CvwsGNZ?w=1024&h=1024&rs=1&pid=ImgDetMain","soyFulanito");
+    this.myUser = new User("FulMen","Fulanito","Mengano","fulanito.mengano@gmail.com","https://th.bing.com/th/id/OIG.XQbFRphxzHhe3CvwsGNZ?w=1024&h=1024&rs=1&pid=ImgDetMain","soyFulanito", "soyFulanito");
   }
 
   public userCompleto(): string
