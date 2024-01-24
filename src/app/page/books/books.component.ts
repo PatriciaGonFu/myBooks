@@ -7,31 +7,39 @@ import { BooksService } from 'src/app/shared/books.service';
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css']
 })
-export class BooksComponent {
+export class BooksComponent implements OnInit {
   public myBooks: Book[];
 
-  constructor(public bookService: BooksService){
-    // this.bookService.getAll();
-    this.myBooks = this.bookService.getAll();
-    console.log(this.myBooks);
+  constructor(public bookService: BooksService){}
+
+  ngOnInit():void{
+    this.getBooks();
   }
 
-  findBook(id_libro:string){
-    console.log(id_libro);
-    if(id_libro == ""){
-      this.myBooks = this.bookService.getAll();
-    }
-    else {
-      this.myBooks = this.bookService.getOne(parseInt(id_libro));
-    }
+  getBooks():void{
+    this.bookService.getAll().subscribe(books => {
+      this.myBooks = books;
+
+    });
   }
 
-  eliminarLibro(id_book: number){
-  let deleted = this.bookService.delete(id_book);
-    if (deleted){
-      this.myBooks = this.bookService.getAll();
+  findBook(id_libro:string): void{
+    if (id_libro === ""){
+      this.getBooks();
+    } else{
+    const parseId = parseInt(id_libro);
+    if(!isNaN(parseId)){
+      this.bookService.getOne(parseId).subscribe(book =>{
+        this.myBooks = book ? [book] : [];
+      });
+      }
     }
   }
-
-  ngOnInit():void{}
+  eliminarLibro(id_book: number): void {
+    this.bookService.delete(id_book).subscribe(deleted => {
+      if (deleted) {
+        this.myBooks = this.myBooks.filter(book => book.id_book !== id_book);
+        }
+    });
+  }
 }

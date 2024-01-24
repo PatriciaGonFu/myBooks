@@ -1,23 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/shared/books.service';
 
 @Component({
-  selector: 'app-add-book',
+  selector: 'app-addbook',
   templateUrl: './add-book.component.html',
   styleUrls: ['./add-book.component.css']
 })
-export class AddBookComponent{
-  
-  constructor(public BooksService:BooksService){}
+export class AddBookComponent {
 
-  nuevoBook(title:string, type:string, author:string, price:number, photo:string, id_book:number)
+  constructor(public booksService: BooksService) {}
 
-  {
-    let libroNuevo = new Book(title,type,author,price,photo,id_book);
+  nuevoBook(title: string, type: string, author: string, price: number, photo: string, id_book: number): void {
+    const libroNuevo = new Book(title, type, author, price, photo, id_book);
     console.log(libroNuevo);
-    this.BooksService.add(libroNuevo);
+    
+    this.booksService.add(libroNuevo).subscribe(() => {
+      console.log('Libro añadido');
+    });
   }
-
-
 }

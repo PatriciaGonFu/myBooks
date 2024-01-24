@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
+
 import { Book } from '../models/book';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BooksService {
+
+  private url = "http://localhost:3000/books";
+
   private books:Book[];
 
-  constructor() { 
+
+  constructor(private http: HttpClient) { 
 
     this.books = [
       new Book("Reina Roja", "Tapa blanda", "Juan Gómez Jurado", 9.95, "https://m.media-amazon.com/images/I/71RLUa5vN0L._SY522_.jpg",1111),
@@ -21,37 +28,27 @@ export class BooksService {
 
   }
 
-  getAll(): Book[]{
-    return this.books;
+  public getAll(): Observable <Book[]>{
+    return this.http.get<Book[]>(this.url);
   }
 
-  getOne(id_libro: number):Book[] | undefined{
-    return this.books.filter(book => book.id_book === id_libro);
+  public getOne(id_libro: number):Observable <Book>{
+    return this.http.get<Book>(`${this.url}/${id_libro}`);
   }
 
-  add(newBook:Book) {
-    this.books.push(newBook);
+  public add(newBook:Book): Observable<Book> {
+    return this.http.post <Book>(this.url, newBook);
     
   }
+  public edit(book: Book): Observable<boolean> {
+    return this.http.put<boolean>(`${this.url}/${book.id_book}`, book);
+}
 
-  edit(book:Book):boolean{
-    for(let i=0; i<this.books.length; i++){
-      if(this.books[i].id_book == book.id_book){
-        this.books[i] = {...this.books[i], ...book};
-        return true;
-      }
-    }
-    return false;
-  }
+  
 
-  delete(id_book: number): boolean {
-    const indexToDelete = this.books.findIndex(book => book.id_book === id_book);
+  public delete(id_book: number): Observable<boolean> {
+    const url = `${this.url}/${id_book}`;
+    return this.http.delete<boolean>(url, { body: { id_book } });
+}
 
-    if (indexToDelete !== -1) {
-      this.books.splice(indexToDelete, 1);
-      return true;
-    }
-
-    return false;
-  }
 }

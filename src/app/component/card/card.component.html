@@ -1,17 +1,16 @@
-    <div class="card"> 
+<div class="card"> 
     <div class="button-container">
-        <button class="eliminar" (click)="eliminarLibro()">X</button>
+      <button class="eliminar" (click)="eliminarLibro()">X</button>
     </div>            
     <div class="url-container">
-        <img src="{{bookPadre.photo}}" alt=""/>
+      <img src="{{bookPadre.photo}}" alt=""/>
     </div>
     <div class="datos" >
-        <h2>{{bookPadre.title}}</h2><br>
-        <h4>{{bookPadre.author}}</h4><br>
-         <h5>{{bookPadre.type}}</h5><br>
-        {{bookPadre.id_book | pitufar}} <br>
-         <b>{{bookPadre.price}} € <br></b>
-         <button class="compra" [ngClass]="{'even-button': evenPadre, 'odd-button': !evenPadre}">Comprar</button>
+      <h2>{{bookPadre.title}}</h2><br>
+      <h4>{{bookPadre.author}}</h4><br>
+      <h5>{{bookPadre.type}}</h5><br>
+      {{bookPadre.id_book | pitufar}} <br>
+      <b>{{bookPadre.price}} € <br></b>
+      <button class="compra" [ngClass]="{'even-button': evenPadre, 'odd-button': !evenPadre}">Comprar</button>
     </div>
-
-</div>
+  </div>

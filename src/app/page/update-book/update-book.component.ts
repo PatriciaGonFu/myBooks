@@ -9,12 +9,14 @@ import { BooksService } from 'src/app/shared/books.service';
 })
 export class UpdateBookComponent {
 
-  constructor(public BooksService: BooksService){}
+  constructor(public booksService: BooksService){}
 
-  bookEditado(title:string, type:string,author:string,price:number,photo:string,id_book:number)
-  {
-    let libroEditado = new Book(title,type,author,price,photo,id_book);
-    console.log(libroEditado);
-    this.BooksService.edit(libroEditado);    
+  editarLibro(title: string, type: string, author: string, price: number, photo: string, id_book: number): void {
+    const bookEditado = new Book(title, type, author, price, photo, id_book);
+    console.log(bookEditado);
+  
+    this.booksService.edit(bookEditado).subscribe((response) => {
+      console.log('Libro editado', response);
+    });
   }
 }
