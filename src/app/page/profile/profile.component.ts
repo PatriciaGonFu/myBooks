@@ -1,30 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent  {
-  public myUser: User;
+export class ProfileComponent implements OnInit {
+  myUser: User;
+  nuevoNombre: string;
+  nuevoApellido: string;
+  nuevoEmail: string;
+  nuevaFoto: string;
+  nuevaPassword: string;
 
-  constructor()
-  {
-    this.myUser = new User("FulMen","Fulanito","Mengano","fulanito.mengano@gmail.com","https://th.bing.com/th/id/OIG.XQbFRphxzHhe3CvwsGNZ?w=1024&h=1024&rs=1&pid=ImgDetMain","soyFulanito", "soyFulanito");
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    this.myUser = this.userService.user;
   }
 
-  public userCompleto(): string
-  {
-      return this.myUser.name + " " + this.myUser.last_name;
-  }
+  modificarDatos(): void {
+    console.log('Datos a modificar:', this.nuevoNombre, this.nuevoApellido, this.nuevoEmail, this.nuevaFoto, this.nuevaPassword);
+    
+    this.userService.putUsuarios(this.myUser.id_user, this.nuevoNombre, this.nuevoApellido, this.nuevoEmail, this.nuevaFoto, this.nuevaPassword)
+      .subscribe((response: any) => {
+        console.log(response);
+        this.myUser.name = this.nuevoNombre;
+        this.myUser.last_name = this.nuevoApellido;
+        this.myUser.email = this.nuevoEmail;
+        this.myUser.photo = this.nuevaFoto;
+        this.myUser.password = this.nuevaPassword;
 
-  modificarDatos(nuevoNombre: string, nuevoApellido: string, nuevoEmail: string, nuevaFoto: string): void {
-    this.myUser.name = nuevoNombre;
-    this.myUser.last_name = nuevoApellido;
-    this.myUser.email = nuevoEmail;
-    this.myUser.photo = nuevaFoto;
+        alert('Los datos se han modificado correctamente')
+      });
+  }
 }
-ngOnInit(): void {  
-}
-}
+

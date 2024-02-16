@@ -1,29 +1,29 @@
-
 <main>
 
     <form #loginForm class="form" (ngSubmit)="onSubmit(loginForm)">
-        <p class="title">Conéctate</p>
-        <p class="message">Inicia sesión para acceder a nuestra aplicación</p>
-        <label>
-            <input type="email" class="input" name="email" [(ngModel)]="user.email" #emailId="ngModel" 
-            [ngClass]="{'is-invalid': (emailId.dirty || emailId.touched) && emailId.invalid}" email required>
-            <span>Email</span>
-            <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)" class="error-message">
-                <div *ngIf="emailId.errors?.required">Obligatorio indicar email</div>
-                <div *ngIf="emailId.errors?.email">Email incorrecto</div>
-            </div>
-        </label> 
-    
-        <label>
-            <input type="password" class="input" name="password" [(ngModel)]="user.password" #passwordId="ngModel"
-            [ngClass]="{'is-invalid': (passwordId.dirty || passwordId.touched) && passwordId.invalid}" minlength="8" required>
-            <span>Contraseña</span>
-            <div *ngIf="passwordId.invalid && (passwordId.dirty || passwordId.touched)" class="error-message">
-                <div *ngIf="passwordId.errors?.required">Obligatorio password</div>
-                <div *ngIf="passwordId.errors?.minlength">Mínimo 8 caracteres</div>
-            </div>
-        </label>
-        <button class="submit" [disabled]="loginForm.invalid">Submit</button>
+      <p class="title">Conéctate</p>
+      <p class="message">Inicia sesión para acceder a nuestra aplicación</p>
+      <label>
+        <input type="email" class="input" name="email" [(ngModel)]="user.email" #emailId="ngModel" 
+          [ngClass]="{'is-invalid': (emailId.dirty || emailId.touched) && emailId.invalid}" email required>
+        <span>Email</span>
+        <div *ngIf="emailId.invalid && (emailId.dirty || emailId.touched)" class="error-message">
+          <div *ngIf="emailId.errors?.required">Obligatorio indicar email</div>
+          <div *ngIf="emailId.errors?.email">Email incorrecto</div>
+        </div>
+      </label> 
+  
+      <label>
+        <input type="password" class="input" name="password" [(ngModel)]="user.password" #passwordId="ngModel"
+          [ngClass]="{'is-invalid': (passwordId.dirty || passwordId.touched) && passwordId.invalid}" minlength="8" required>
+        <span>Contraseña</span>
+        <div *ngIf="passwordId.invalid && (passwordId.dirty || passwordId.touched)" class="error-message">
+          <div *ngIf="passwordId.errors?.required">Obligatorio password</div>
+          <div *ngIf="passwordId.errors?.minlength">Mínimo 8 caracteres</div>
+        </div>
+      </label>
+      <button class="submit" [disabled]="loginForm.invalid">Submit</button>
     </form>
-</main>
+  </main>
+  
 

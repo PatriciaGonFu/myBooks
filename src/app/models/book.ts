@@ -4,8 +4,9 @@ export class Book {
     public author: string;
     public price: number;
     public photo: string;
+    public id_user: number;
     public id_book: number;
-    public id_user: number = 0;
+
 
     constructor (
         title:string, 
@@ -13,15 +14,18 @@ export class Book {
         author:string, 
         price:number, 
         photo:string,
-        id_book: number,
-        id_user: number = 0) 
+        id_user: number,
+        id_book: number
+) 
     {
         this.title = title;
         this.type = type;
         this.author = author;
         this.price = price;
         this.photo= ""+photo; 
+        this.id_user = id_user;
         this.id_book = id_book;
+
     }
 }
 

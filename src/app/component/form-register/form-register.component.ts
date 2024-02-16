@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user';
-
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-form-register',
@@ -11,17 +11,30 @@ import { User } from 'src/app/models/user';
 export class FormRegisterComponent implements OnInit{
   public user: User
 
-  constructor()
-  {this.user = new User('','','','','','','')}
+  constructor(private userService: UserService) {}
 
-  onSubmit(form:NgForm){
+  onSubmit(form: NgForm) {
     if (form.invalid || this.user.password !== this.user.confirmPassword) {
+      console.error('Las contraseñas no coinciden o el formulario es inválido');
       return;
     }
-    console.log(form.value);
-    console.log(this.user);
+  
+    // Eliminamos confirmPassword del objeto user antes de enviarlo al backend
+    delete this.user.confirmPassword;
+  
+    this.userService.postRegister(this.user).subscribe(
+      (response: any) => {
+        console.log('Usuario registrado correctamente:', response);
+        alert('El usuario se ha registrado correctamente');
+      },
+      (error) => {
+        console.error('Error al registrar usuario:', error);
+      }
+    );
   }
+  
 
   ngOnInit(): void { 
+    this.user = new User(0, '', '', '', '', '', ''); // Inicializa el usuario con valores predeterminados
   }
 }

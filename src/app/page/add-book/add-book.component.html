@@ -10,8 +10,8 @@
                 <label for="type" class="custom-label">
                     <select required id="type" name="type" #input2 class="input custom-select">
                       <option value="" disabled selected hidden></option>
-                      <option value="tapa-dura">Tapa dura</option>
-                      <option value="tapa-blanda">Tapa blanda</option>
+                      <option value="Tapa dura">Tapa dura</option>
+                      <option value="Tapa blanda">Tapa blanda</option>
                     </select>
                     <span>Tipo</span>
                   </label>
@@ -28,12 +28,7 @@
                 <input required="" placeholder="" class="input" id="url" name="url" #input5>
                 <span>URL Foto</span>
             </label>
-            <label>
-                <input required="" placeholder="" type="text" class="input" id="id_book" name="id_book" #input6>
-                <span>Código de libro</span>
-            </label>
-
-            <button type="button" (click)= "nuevoBook(input1.value, input2.value, input3.value, input4.value, input5.value, input6.value)" class="submit">Añadir</button>
-    </form>
+            <button type="button" (click)="nuevoBook(input1.value, input2.value, input3.value, input4.value, input5.value)" class="submit">Añadir</button>
+        </form>
 </main>
 

@@ -1,15 +1,19 @@
 <header>
-<section><h2>MyBooks</h2></section>
-<aside>
-    <ul>
-    <a routerLink="home">Home</a>
-    <a routerLink="books">Books</a>
-    <a routerLink="add-book">AddBook</a>
-    <a routerLink="update-book">UpdateBook</a>
-    <a routerLink="register">Register</a>
-    <a routerLink="login">Login</a>
-    <a routerLink="profile">Profile</a>
-
-    </ul>
-</aside>
-</header>
+    <section><h2>MyBooks</h2></section>
+    <aside>
+      <ul>
+        <li *ngIf="!userService.logueado">
+          <a routerLink="home">Home</a>
+          <a routerLink="login">Login</a>
+          <a routerLink="register">Register</a>
+        </li>
+        <li *ngIf="userService.logueado">
+          <a routerLink="books">Books</a>
+          <a routerLink="update-book">UpdateBook</a>
+          <a routerLink="add-book">AddBook</a>
+          <a routerLink="profile">Profile</a>
+        </li>
+      </ul>
+    </aside>
+  </header>
+  
