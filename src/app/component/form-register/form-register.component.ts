@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/shared/user.service';
 
@@ -11,7 +12,7 @@ import { UserService } from 'src/app/shared/user.service';
 export class FormRegisterComponent implements OnInit{
   public user: User
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   onSubmit(form: NgForm) {
     if (form.invalid || this.user.password !== this.user.confirmPassword) {
@@ -26,6 +27,7 @@ export class FormRegisterComponent implements OnInit{
       (response: any) => {
         console.log('Usuario registrado correctamente:', response);
         alert('El usuario se ha registrado correctamente');
+        this.router.navigate(['/login']);
       },
       (error) => {
         console.error('Error al registrar usuario:', error);

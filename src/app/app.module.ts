@@ -16,6 +16,7 @@ import { LoginComponent } from './page/login/login.component';
 import { FormLoginComponent } from './component/form-login/form-login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Router, RouterModule } from '@angular/router';
 
 
 
@@ -40,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    RouterModule
     
   ],
   providers: [],

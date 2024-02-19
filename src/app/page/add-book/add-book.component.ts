@@ -10,9 +10,7 @@ import { UserService } from 'src/app/shared/user.service';
   styleUrls: ['./add-book.component.css']
 })
 export class AddBookComponent {
-  [x: string]: any;
-
-  constructor(public booksService: BooksService, private userService: UserService) {}
+  constructor(public booksService: BooksService, private userService: UserService, private router: Router) {}
 
   nuevoBook(title: string, type: string, author: string, price: number, photo: string): void {
     const userId = this.userService.user.id_user;

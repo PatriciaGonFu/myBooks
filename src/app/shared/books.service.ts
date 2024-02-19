@@ -34,11 +34,11 @@ export class BooksService {
   }
 
   public add(newBook: Book): Observable<Book> {
-    return this.http.post<Book>(`${this.baseUrl}${this.userId}`, newBook);
+    return this.http.post<Book>(`${this.baseUrl}`, newBook);
   }
 
   public edit(book: Book): Observable<boolean> {
-    return this.http.put<boolean>(`${this.baseUrl}${this.userId}/${book.id_book}`, book);
+    return this.http.put<boolean>(`${this.baseUrl}/${book.id_book}`, book);
   }
 
   public delete(bookId: number): Observable<boolean> {

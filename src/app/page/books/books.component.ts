@@ -53,6 +53,7 @@ export class BooksComponent {
     this.bookService.delete(id_book).subscribe(deleted => {
       if (deleted) {
         this.myBooks = this.myBooks.filter(book => book.id_book !== id_book);
+        alert('Libro eliminado');
       }
     });
 }
