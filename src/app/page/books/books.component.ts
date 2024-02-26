@@ -9,11 +9,11 @@ import { UserService } from 'src/app/shared/user.service';
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent {
-  public myBooks: Book[];
+  public myBooks: Book [];
 
   constructor(public bookService: BooksService, private userService: UserService) {
     this.myBooks = [];
-    this.bookService.getAll(this.userService.user.id_user).subscribe(books => {
+    this.bookService.getAll(this.userService.user.id_user).subscribe((books: Book[]) => {
       this.myBooks = books;
       console.log(this.myBooks);
       
@@ -31,18 +31,21 @@ export class BooksComponent {
 
   findBook(id_libro: string): void {
     if (id_libro == "") {
-      this.bookService.getAll(this.userService.user.id_user).subscribe(books =>{
+      this.bookService.getAll(this.userService.user.id_user).subscribe((books: Book[]) =>{
         this.myBooks = books;
+      console.log(this.myBooks);
+      
       })
     } else {
       const parseId = parseInt(id_libro);
       if (!isNaN(parseId)) {
         const userId = this.userService.user.id_user; 
-        this.bookService.getOne(parseId).subscribe(book => {
-          this.myBooks = book ? [book] : [];
-          console.log(this.myBooks);
-          console.log([book]);
+        this.bookService.getOne(parseId).subscribe((books: Book[]) => {
+          this.myBooks = books
+          // this.myBooks = book ? [book] : [];
+          console.log(books);
           
+          console.log(this.myBooks);          
           
         });
       }

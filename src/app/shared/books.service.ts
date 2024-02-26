@@ -19,16 +19,16 @@ export class BooksService {
   }
   
 
-  public getAll(userId): Observable<Book[]> {
+  public getAll(userId) {
     this.userId = userId;
     console.log(this.userId); // Verifica que el userId se haya obtenido correctamente
 
-    return this.http.get<Book[]>(`${this.baseUrl}/${userId}`);
+    return this.http.get(`${this.baseUrl}/${userId}`);
   }
 
-  public getOne(bookId: number): Observable<Book> {
+  public getOne(bookId: number) {
     console.log(`${this.baseUrl}/${this.userId}/${bookId}`);
-    return this.http.get<Book>(`${this.baseUrl}/${this.userId}/${bookId}`);
+    return this.http.get(`${this.baseUrl}/${this.userId}/${bookId}`);
 
     
   }
@@ -37,8 +37,10 @@ export class BooksService {
     return this.http.post<Book>(`${this.baseUrl}`, newBook);
   }
 
-  public edit(book: Book): Observable<boolean> {
-    return this.http.put<boolean>(`${this.baseUrl}/${book.id_book}`, book);
+  public edit(book: Book){
+    console.log(book);
+    
+    return this.http.put(this.baseUrl, book)
   }
 
   public delete(bookId: number): Observable<boolean> {
